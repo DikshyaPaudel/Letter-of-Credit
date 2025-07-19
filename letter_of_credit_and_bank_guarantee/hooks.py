@@ -144,6 +144,17 @@ app_license = "mit"
 # 		"on_trash": "method"
 # 	}
 # }
+doc_events = {
+    "Payment Entry": {
+        "on_submit" : "letter_of_credit_and_bank_guarantee.payment_entry.update_lc_payment_details"
+    },
+    "Purchase Receipt":{
+        "on_submit" : "letter_of_credit_and_bank_guarantee.purchase_receipt_lc.update_lc_receipt_quantity"
+    },
+    "Journal Entry":{
+        "on_submit" : "letter_of_credit_and_bank_guarantee.journal_entry_lc.update_lc"
+    }
+}
 
 # Scheduled Tasks
 # ---------------

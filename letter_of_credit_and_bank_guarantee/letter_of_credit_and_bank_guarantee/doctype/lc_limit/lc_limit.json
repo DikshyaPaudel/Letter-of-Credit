@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-27 12:36:03.144011",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bank",
+  "limit_regular",
+  "limit_one_off",
+  "utilized_regular",
+  "utilized_one_off",
+  "balance_regular",
+  "balance_one_off"
+ ],
+ "fields": [
+  {
+   "fieldname": "bank",
+   "fieldtype": "Link",
+   "label": "Bank",
+   "options": "Bank"
+  },
+  {
+   "fieldname": "limit_regular",
+   "fieldtype": "Currency",
+   "label": "Limit-Regular"
+  },
+  {
+   "fieldname": "limit_one_off",
+   "fieldtype": "Currency",
+   "label": "Limit-One Off"
+  },
+  {
+   "fieldname": "utilized_regular",
+   "fieldtype": "Currency",
+   "label": "Utilized-Regular"
+  },
+  {
+   "fieldname": "utilized_one_off",
+   "fieldtype": "Currency",
+   "label": "Utilized-One Off"
+  },
+  {
+   "fieldname": "balance_regular",
+   "fieldtype": "Currency",
+   "label": "Balance-Regular",
+   "precision": "2"
+  },
+  {
+   "fieldname": "balance_one_off",
+   "fieldtype": "Currency",
+   "label": "Balance-One Off",
+   "precision": "2"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-27 18:19:21.833321",
+ "modified_by": "Administrator",
+ "module": "Letter of Credit and Bank Guarantee",
+ "name": "LC Limit",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
