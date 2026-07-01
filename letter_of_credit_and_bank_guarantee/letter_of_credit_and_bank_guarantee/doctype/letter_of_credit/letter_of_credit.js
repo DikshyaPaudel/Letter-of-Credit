@@ -54,10 +54,6 @@ frappe.ui.form.on("Letter of Credit", {
                         // Update custom status field
                         frm.set_value('status_i', status);
                         frm.save();
-                        // frm.save().then(() => {
-                        //     frappe.msgprint('Status updated to ' + status);
-                        //     frm.reload_doc();
-                        // });
                     },
                     'Status'  // Group under Status
                 );
@@ -78,23 +74,6 @@ frappe.ui.form.on("Letter of Credit", {
     lc_amount: function(frm){
         frm.set_value('total_limit', frm.doc.lc_amount);
     },
-    // exchange_rate: function(frm) {
-    //     if (frm.doc.lc_amount && frm.doc.exchange_rate) {
-    //         let totalLimit = frm.doc.lc_amount * frm.doc.exchange_rate;
-    //         frm.set_value('total_limit', totalLimit);
-    //     }
-    // },
-    // custom_revised_quantity: function(frm) {
-    //     update_latest_quantity(frm);
-    // },
-    // lc_quantity: function(frm) {
-    //     update_latest_quantity(frm);
-    // },
-    // onload: function(frm) {
-    //     update_latest_quantity(frm);
-    // }
-
-    
 });
 
 frappe.ui.form.on('Due Date LC',{
@@ -138,13 +117,4 @@ function update_lc_amount(frm) {
     }
 }
 
-
-// function update_latest_quantity(frm) {
-//     if (frm.doc.custom_revised_quantity) {
-//         frm.set_value('latest_quantity', frm.doc.custom_revised_quantity);
-//     } else if (frm.doc.lc_quantity) {
-//         frm.set_value('latest_quantity', frm.doc.lc_quantity);
-//     } else {
-//         frm.set_value('latest_quantity', 0);
-//     }
-// }
+}

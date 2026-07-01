@@ -1,0 +1,59 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-07-01 10:57:23.555176",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "lc_loan_account",
+  "nrb_margin_account",
+  "lc_margin_account",
+  "bank_charges_account",
+  "insurance_account"
+ ],
+ "fields": [
+  {
+   "fieldname": "lc_loan_account",
+   "fieldtype": "Link",
+   "label": "LC Loan Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "nrb_margin_account",
+   "fieldtype": "Link",
+   "label": "NRB Margin Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "lc_margin_account",
+   "fieldtype": "Link",
+   "label": "LC Margin Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "bank_charges_account",
+   "fieldtype": "Link",
+   "label": "Bank Charges/RTGS Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "insurance_account",
+   "fieldtype": "Link",
+   "label": "Insurance (L/C) Account",
+   "options": "Account"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-07-01 10:57:23.555176",
+ "modified_by": "Administrator",
+ "module": "Letter of Credit and Bank Guarantee",
+ "name": "LC and BG Settings",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

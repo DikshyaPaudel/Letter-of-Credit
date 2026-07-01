@@ -146,7 +146,7 @@ app_license = "mit"
 # }
 doc_events = {
     "Payment Entry": {
-        "on_submit" : "letter_of_credit_and_bank_guarantee.payment_entry.update_lc_payment_details"
+        "on_submit" : "letter_of_credit_and_bank_guarantee.payment_entry_lc.update_lc_payment_details"
     },
     "Purchase Receipt":{
         "on_submit" : "letter_of_credit_and_bank_guarantee.purchase_receipt_lc.update_lc_receipt_quantity"

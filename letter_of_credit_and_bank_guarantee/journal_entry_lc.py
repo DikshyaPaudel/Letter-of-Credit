@@ -7,6 +7,7 @@ def update_lc(doc, method):
         return
 
     lc = frappe.get_doc("Letter of Credit", doc.custom_lc_no)
+    settings = frappe.get_single("LC and BG Settings")
 
     # Initialize total trackers
     loan_amount = 0
@@ -18,12 +19,13 @@ def update_lc(doc, method):
 
     # Set of known LC-related accounts
     handled_accounts = {
-        "321103 - LC Loan - SCP",
-        "125500 - NRB Margin - SCP",
-        "125800 - LC Margin - SCP",
-        "519001 - Bank Charges/Lc Rtgs - SCP",
-        "519023-Insurance  (L/C) - SCP"
+        settings.lc_loan_account,
+        settings.nrb_margin_account,
+        settings.lc_margin_account,
+        settings.bank_charges_account,
+        settings.insurance_account
     }
+    handled_accounts = {acc for acc in handled_accounts if acc}
 
     # Loop through all journal entry accounts
     for acc in doc.accounts:
@@ -32,19 +34,19 @@ def update_lc(doc, method):
 
         account = acc.account
 
-        if account == "321103 - LC Loan - SCP":
+        if account and account == settings.lc_loan_account:
             loan_amount += credit - debit
 
-        elif account == "125500 - NRB Margin - SCP":
+        elif account and account == settings.nrb_margin_account:
             nrb_margin += debit - credit
 
-        elif account == "125800 - LC Margin - SCP":
+        elif account and account == settings.lc_margin_account:
             cash_margin += debit - credit
 
-        elif account == "519001 - Bank Charges/Lc Rtgs - SCP":
+        elif account and account == settings.bank_charges_account:
             commission += debit - credit
 
-        elif account == "519023-Insurance  (L/C) - SCP":
+        elif account and account == settings.insurance_account:
             premium_amount += debit - credit
 
         # Any other account is considered as payment (e.g., supplier)
